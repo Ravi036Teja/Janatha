@@ -1,0 +1,136 @@
+//  formData.append("access_key", "17ba6636-ac5a-483e-8ce7-60b66b464f5d");
+//     formData.append("access_key", "a4df4df6-0214-41ac-a2ad-ee423889f3b9");
+
+const timelineData = [
+  {year: "1973", content: "Janatha Auto Works was founded by Late Gooty Dada Sab along with two friends in Gangavathi.", image: "/images/1973.jpg" },
+  {year: "1982", content: "Expansion of business as one of the founders opened a workshop in Hospet and another in Chitradurga.", image: "/images/1982.jpg" },
+  {year: "1983", content: "A 2S spare and service shop was established in Kushtagi, marking the first expansion of Janatha Auto Works outside Gangavathi.", image: "/images/1983.jpg" },
+  {year: "1992", content: "A new six-bay workshop was constructed in Gangavathi after 10 years of dedicated service.", image: "/images/1992.jpg" },
+  {year:"1996", content:"Water service shop established to enhance vehicle maintenance services, Machine shop launched under the leadership of Aslam Bhai and Noor Khan Sab to improve efficiency." , image: "/images/1996.jpg"},
+  {year: "2001", content: "Became Sundaram Motors Authorized Service Station (SMASS) for Ashok Leyland vehicles in Gangavathi.", image: "/images/2001.jpg" },
+  {year:"2003", content:"Second workshop opened in Hospet, responding to increasing mining activities and vehicle demand."},
+  {year:"2004", content:"  Machine shop established at the Hospet workshop to improve service delivery and efficiency."},
+  {year:"2007", content:"Became an Authorized Service Center for RANE TRW Power Steering Systems at the Hospet workshop."},
+  {year: "2008", content: "Opened a dedicated Engine Reboring Workshop in Hospet, solving a key problem of outsourcing engine refurbishment.", image: "/images/2008.jpg" },
+  {year:"2009", content:"Became an Exide Battery Distributor for the entire Koppal district for sales and service."},
+  {year:"2010", content:"Appointed Ashok Leyland’s Authorized Service Center for Koppal District."},
+  {year:"2011", content:"Secured an AMC (Annual Maintenance Contract) with JSW to provide 24/7 maintenance for 80 vehicles in Sandur mines, Began at-site AMC service for NMDC's 8 staff buses, a contract that continues to date."},
+  {year:"2012", content:"Expanded operations with a 7-bay workshop in Kurekuppa, which later became a 15-bay full-fledged workshop in 2018, Became Turbo Energy Ltd’s Authorized Service Center (ASC) for the Bellary district."},
+  {year:'2015', content:"Established an Authorized Service Center for WABCO, TEL, and RANE TRW in Chitradurga, Opened container workshops in Belgaum and Bijapur for Ashok Leyland service."},
+  {year:"2016", content:"Launched Bellary Reboring Workshop to meet rising demand for engine reboring services, Started a subcontract with Rocktech Mining Contractor at NMDC mines, deploying 18 Ashok Leyland vehicles , Established IQRA Public School Gangavathi to provide affordable, quality education."},
+  {year:"2017", content:"Received Best Performance Award from Ashok Leyland for highest vehicle inflow revenue in Gangavathi, Kurekuppa branch achieved ₹8 crore revenue, receiving Ashok Leyland’s Best Performance Award."},
+  {year: "2018", content: "Opened a sixth Ashok Leyland Authorized Service Center (ASC) in Kudligi, Janatha Automobiles Pvt. Ltd. was established as a Tata Motors Commercial Vehicles Dealer, Set up a 3S dealership in Gangavathi with nine service bays, a machine shop, and a wheel alignment system.", image: "/images/2018.jpg" },
+  {year:"2019", content:"6-bay service workshop launched in Raichur, strengthening Tata Motors’ presence in the region, Modern 25-bay workshop constructed in Hospet, designed to Tata Motors’ specifications, Awarded a work order from NMDC for 30 TATA Signa 2825 mining tippers."},
+  {year:"2020", content:"Received a 3-year work order from S M Minetech for 20 TATA Signa 2825 mining tippers at Bhadra Mines."},
+  {year:"2022", content:"Awarded Best Performance Award by Turbo Energy Limited for turbo sales and service, Purchased land in Bellary for a new 9-bay full-fledged workshop.Purchased land in Bellary for a new 9-bay full-fledged workshop."},
+  {year:"2023", content:"Secured Tata Batteries dealership for Raichur, Hospet, and Bellary, Became an Authorized CCC (Components Care Center) for Cummins in Chitradurga, Hospet, Bellary, Davangere, and Shimoga districts."},
+  {year: "2024", content: "Achieved a milestone of 3,323 vehicle sales over 6 years with Tata Motors, Generated ₹94.69 crore revenue through 1,11,986 job cards over six years, Secured two Fleet Management Solutions (FMS) accounts in a single day, a first in PAN India and North Karnataka.", image: "/images/2024.jpg" },
+];
+
+// import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Carousel from "../../components/Carousel";
+import japllogo from "../../Images/japl-logo.png";
+import Partners from "./Partners";
+import AuroraBackground from "./AuroraBackground";
+
+const Home = () => {
+  // Scroll trigger for the text section
+  const [refText, inViewText] = useInView({
+    threshold: 0.2, // Animation triggers when 20% of the element is visible
+  });
+
+  // Scroll trigger for the logo
+  const [refLogo, inViewLogo] = useInView({
+    threshold: 0.2,
+  });
+
+  // Scroll trigger for the Partners section
+  const [refPartners, inViewPartners] = useInView({
+    threshold: 0.2,
+  });
+
+  return (
+    <div className="mx-8"  id="home">
+      {/* Carousel */}
+      {/* <Carousel /> */}
+      <AuroraBackground/>
+
+      {/* About Content */}
+      {/* <div className="mx-4 sm:mx-8 md:mx-12 my-12 grid grid-cols-1 md:grid-cols-2 gap-8"> */}
+        {/* Column 1: Text Content */}
+        {/* <motion.div
+          ref={refText}
+          initial={{ opacity: 0, x: -50 }}
+          animate={inViewText ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-blue-900 font-bold">
+            Janatha Automobiles Pvt Ltd (JAPL)
+          </h1>
+          <h2 className="text-base sm:text-lg md:text-xl my-4 text-gray-500">
+            Welcome to <span>JAPL</span>, your trusted source for Tata Motors
+            commercial vehicles. We are dedicated to delivering excellence by
+            showcasing a full range of Tata’s cutting-edge, durable, and
+            reliable commercial vehicles.
+          </h2>
+          <h2 className="text-base sm:text-lg md:text-xl my-4 text-gray-500">
+            At JAPL, we understand that businesses thrive on transportation
+            solutions that combine efficiency, power, and innovation. Whether
+            you're looking for heavy-duty trucks, buses, or small cargo
+            vehicles, Tata Motors is a name synonymous with performance and
+            dependability.
+          </h2>
+          <h2 className="text-base sm:text-lg md:text-xl my-4 text-gray-500">
+            Our team is committed to helping you find the right vehicle to suit
+            your business needs. With decades of Tata’s expertise in
+            engineering and customer-centric solutions, we aim to provide a
+            seamless experience from selection to ownership.
+          </h2>
+          <h2 className="text-base sm:text-lg md:text-xl my-4 text-gray-500">
+            Thank you for trusting us to be part of your journey.
+          </h2>
+        </motion.div> */}
+
+        {/* Column 2: Image */}
+        {/* <motion.div
+          ref={refLogo}
+          className="flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={inViewLogo ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src={japllogo}
+            alt="JAPL Logo"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md pt-6"
+          />
+        </motion.div>
+      </div> */}
+
+      {/* Partners Section */}
+      <motion.div
+        ref={refPartners}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inViewPartners ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 1 }}
+      >
+        <Partners/>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Home;
+
+
+
+//1. Ground floor, SY no 250/A, 433 B/2, NH13, Bangalore Road, Opp BMM
+// ispat ltd plant, Danapuram
+
+// 2SY no 888/2/01, Janatha Automobiles Private Limited, Near Chaitanya Fuels, kolagal village, Ballari, Karnataka - 583101
+
+// 3.  Property No 188/C/3, Ward no 3, Kurekuppa, Ballari, Karnatka, 583123
+
+// 4.   SY no 69, Lingsugur road, Hunsihalhudea village, Near power gate, Raichur, Karnataka - 584101

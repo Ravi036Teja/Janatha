@@ -1,0 +1,124 @@
+import React from "react";
+import MhcvSlider from "../M&HCV_Tippers/MhcvSlider";
+import Accordion from "./M&HcvAcorian";
+import EnquiryForm from "../EnuiryForm";
+
+const MHcv = () => {
+  const accordionItems = [
+    {
+      heading: "Description",
+      content: (
+        <p className="text-gray-700 font-sans text-md">
+          The Prima range of trucks offers increased productivity and longer
+          life making the range an indispensable asset for large captive users,
+          miners or transporters. <br /> The Tata MCV 1613 LPT is known for its
+          superior performance. An excellent engine life, higher mileage and
+          great acceleration make this truck a great choice for businesses. With
+          the Tata MCV 1613 LPT you can be rest assured about your business. <br /> The
+          HCV – TATA SIGNA 3718.T is known for its fuel efficiency and high
+          reliability. It offers the best in- industry durability, running
+          performance, and is available in 2 deck lengths across 2 wheelbase
+          options. <br /> The Tata Prima Lx 3130.K tipper boasts of efficient power
+          transmission, higher ground clearance, best in-class gradeability and
+          a high performance engine. The cabin offers absolute comfort to the
+          driver. <br /> The Tata Prima lx 4930 comes with enhanced technologies to
+          redefine customer experience. It is built in compliance with global
+          standards, and is an ideal blend of technology and performance. It
+          gives truckers the opportunity to upgrade to a modern trucking system.
+        </p>
+      )
+    },
+    {
+      heading: "Specification & Price",
+      content: (
+        <p>
+          Shipping times vary based on your location, but typically it takes
+          between 5-7 business days.
+        </p>
+      )
+    },
+    {
+      heading: "Features",
+      content: (
+        <p>
+          Yes, we offer 24/7 technical support. You can reach our support team
+          via email or phone.
+        </p>
+      )
+    },
+    {
+      heading: "Enquiry",
+      content: (
+       <EnquiryForm/>
+      )
+    }
+  ];
+
+  return (
+    <div className="mt-28 min-h-screen">
+      {/* <div className='relative'>
+        
+      </div> */}
+      <div className="">
+        <h1 className="text-4xl font-semibold text-center text-blue-900">
+          M&HCV CONSTRUCK TIPPERS
+        </h1>
+      </div>
+
+      <div className="flex flex-col">
+        <div className="w-ful h-[500px] object-fill overflow-hidden mx-20 my-12">
+          {/* <img src="https://truckcdn.cardekho.com/in/tata/1212-lpt/tata-1212-lpt-74906.jpg" alt="hcv" className=' h-[400px]  ' /> */}
+          <MhcvSlider />
+        </div>
+
+        {/* <div className="mx-40 my-12">
+          <div className="flex flex-col gap-6"> */}
+            {/* card 1 */}
+            {/* <div className="p-4 border flex gap-4 space-y-2">
+              <img src="" alt="auto engine" />
+              <div>
+                <p className="text-gray-500">Auto Engine</p>
+                <h2 className="text-2xl font-bold">
+                  Cummins <br />
+                  ISBe5.9 180 40
+                </h2>
+              </div>
+            </div> */}
+            {/* card 2 */}
+            {/* <div className="p-4 border flex gap-4 space-y-2">
+              <img src="" alt="auto engine" />
+              <div className="">
+                <p className="text-gray-500">Auto Fuel</p>
+                <h2 className="text-2xl font-bold">Diesel</h2>
+              </div>
+            </div> */}
+            {/* card 3 */}
+            {/* <div className="p-4 border flex gap-4 space-y-2">
+              <img src="" alt="auto engine" />
+              <div>
+                <p className="text-gray-500">Auto Transmission</p>
+                <h2 className="text-2xl font-bold">Manual</h2>
+              </div>
+            </div> */}
+            {/* card 4 */}
+            {/* <div className="p-4 border flex gap-4 space-y-2">
+              <img src="" alt="auto engine" />
+              <div>
+                <p className="text-gray-500">Auto Wheel Base</p>
+                <h2 className="text-2xl font-bold">5580</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <div> */}
+        <div className="min-h-screen py-10 ">
+          <Accordion items={accordionItems} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MHcv;
